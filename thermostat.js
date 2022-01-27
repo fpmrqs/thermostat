@@ -29,7 +29,13 @@ class Thermostat {
   }
 
   getUsage() {
-    this.temperature < 18 ? return ("Low-usage") : this.temperature <= 25 ? return ("Medium-usage") : return ("High-usage");
+    if (this.temperature < 18) {
+      return "Low-usage";
+    } else if (this.temperature <= 25) {
+      return "Medium-usage";
+    } else {
+      return "High-usage";
+    }
   }
 }
 
