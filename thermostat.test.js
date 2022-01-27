@@ -23,4 +23,32 @@ describe("Thermostat", () => {
     }
     expect(thermostat.getTemperature()).toEqual(10);
   });
+
+  it("power saving mode is on by default", () => {
+    for(let i = 0; i < 16; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.getTemperature()).toEqual(25);
+  });
+
+  it("can switch powerSaving off", () => {
+    thermostat.setPowerSavingMode(false);
+    thermostat.up();
+    expect(thermostat.getTemperature()).toEqual(26);
+  });
+
+  it("resets temperature to 20 degrees", () => {
+    thermostat.reset()
+    expect(thermostat.getTemperature()).toEqual(20);
+  });
+
+  it("has a current energy usage", () => {
+    expect(thermostat.getUsage()).toEqual("Medium-usage");
+
+    for(let i = 0; i < 7; i++) { thermostat.up(); }
+    expect(thermostat.getUsage()).toEqual("High-usage");
+
+    for(let i = 0; i < 11; i++) { thermostat.down(); }
+    expect(thermostat.getUsage()).toEqual("Low-usage");
+  });
 });
