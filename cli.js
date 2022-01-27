@@ -8,17 +8,26 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
-
 const tempController = () => {
   rl.question('Enter command > ', (change) => {
-    if (change === "off") {
-      return console.log("Thanks for using our thermostat")
-    } else if (change === "up") {
-      thermostat.up();
-    } else {
-      thermostat.down();
+    switch (change) {
+      case "off":
+        console.log("Thanks for using our thermostat");
+        return rl.close();
+      case "down":
+        thermostat.down();
+        break;
+      case "up":
+        thermostat.up();
+        break;
+      case "psm on":
+        thermostat.setPowerSavingMode(true);
+      break;
+      case "psm off":
+        thermostat.setPowerSavingMode(false);
+      break;
     }
+
     console.log(thermostat.getTemperature());
     tempController()
   });

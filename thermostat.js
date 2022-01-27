@@ -9,7 +9,7 @@ class Thermostat {
   }
 
   up() {
-    if(this.temperature < this.maxTemp){
+    if (this.temperature < this.maxTemp) {
       this.temperature++;
     }
   }
@@ -20,8 +20,8 @@ class Thermostat {
     }
   }
 
-  setPowerSavingMode(boo) {
-    boo ? this.maxTemp = 25 : this.maxTemp = 32;
+  setPowerSavingMode(mode) {
+    mode ? (this.maxTemp = 25) : (this.maxTemp = 32);
   }
 
   reset() {
