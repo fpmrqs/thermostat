@@ -1,7 +1,6 @@
 {
   "name": "thermostat",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jest": "^27.4.7"
-  }
+    "jest": "^27.4.7",
+    "readline": "^1.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fpmrqs/thermostat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fpmrqs/thermostat/issues"
+  },
+  "homepage": "https://github.com/fpmrqs/thermostat#readme",
+  "description": ""
 }
